@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Apple Financials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="main-title">Apple Inc.</h1>
+
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="toggle-label">Dark Mode</span>
+        </div>
+
+
+        <h2>Graph of Apple's Stock Prices (Weekly)</h2>
+        <img src="{{STOCK_IMG}}" alt="Apple Stock Chart">
+
+        <h2>Basic Income Statement (5-Year)</h2>
+        {{FINANCIAL_TABLE}}
+
+        <h2>Basic Stock Performance Metrics</h2>
+        <div class="metrics-row">
+            <div class="metric-pill">CAGR (5-Year): {{CAGR}}</div>
+            <div class="metric-pill">YTD Change: {{YTD}}</div>
+            <div class="metric-pill">Beta (5-Year): {{BETA}}</div>
+        </div>
+
+        <div class="button-row">
+            <a href="https://www.apple.com" target="_blank" class="external-button">Visit Apple.com</a>
+            <a href="https://www.nasdaq.com/market-activity/stocks/aapl" target="_blank" class="external-button">Visit
+                Nasdaq.com</a>
+        </div>
+
+
+    </div>
+    <script>
+        const toggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Load saved preference
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggle.checked = true;
+        }
+
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+
+</body>
+
+
+</html>

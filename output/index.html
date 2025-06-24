@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Apple Financials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="main-title">Apple Inc.</h1>
+
+        <div class="toggle-container">
+            <label class="switch">
+                <input type="checkbox" id="themeToggle">
+                <span class="slider round"></span>
+            </label>
+            <span class="toggle-label">Dark Mode</span>
+        </div>
+
+
+        <h2>Graph of Apple's Stock Prices (Weekly)</h2>
+        <img src="stock.png" alt="Apple Stock Chart">
+
+        <h2>Basic Income Statement (5-Year)</h2>
+        <table>
+  <tr><th></th><th>2019</th><th>2020</th><th>2021</th><th>2022</th><th>2023</th></tr>
+  <tr><td>Revenue</td><td>260,174</td><td>274,515</td><td>365,817</td><td>394,328</td><td>383,285</td></tr>
+  <tr><td>Cost of Goods Sold</td><td>161,782</td><td>169,559</td><td>212,981</td><td>223,546</td><td>214,137</td></tr>
+  <tr><td>Gross Margin</td><td>98,392</td><td>104,956</td><td>152,836</td><td>170,782</td><td>169,148</td></tr>
+  <tr><td>R&D Expenses</td><td>16,217</td><td>18,752</td><td>21,914</td><td>26,251</td><td>29,915</td></tr>
+  <tr><td>SG&A Expenses</td><td>18,245</td><td>19,916</td><td>21,973</td><td>25,094</td><td>24,932</td></tr>
+  <tr><td>Operating Income</td><td>63,930</td><td>66,288</td><td>108,949</td><td>119,437</td><td>114,301</td></tr>
+  <tr><td>Other Income (net)</td><td>1,807</td><td>803</td><td>258</td><td>-334</td><td>-565</td></tr>
+  <tr><td>Income Before Tax</td><td>65,737</td><td>67,091</td><td>109,207</td><td>119,103</td><td>113,736</td></tr>
+  <tr><td>Income Tax</td><td>10,481</td><td>9,680</td><td>14,527</td><td>19,300</td><td>16,741</td></tr>
+  <tr><td>Net Income</td><td>55,256</td><td>57,411</td><td>94,680</td><td>99,803</td><td>96,995</td></tr>
+</table>
+
+        <h2>Basic Stock Performance Metrics</h2>
+        <div class="metrics-row">
+            <div class="metric-pill">CAGR (5-Year): 19.29%</div>
+            <div class="metric-pill">YTD Change: -16.18%</div>
+            <div class="metric-pill">Beta (5-Year): 1.29</div>
+        </div>
+
+        <div class="button-row">
+            <a href="https://www.apple.com" target="_blank" class="external-button">Visit Apple.com</a>
+            <a href="https://www.nasdaq.com/market-activity/stocks/aapl" target="_blank" class="external-button">Visit
+                Nasdaq.com</a>
+        </div>
+
+
+    </div>
+    <script>
+        const toggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Load saved preference
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            toggle.checked = true;
+        }
+
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    </script>
+
+</body>
+
+
+</html>
