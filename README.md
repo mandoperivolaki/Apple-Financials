@@ -30,7 +30,7 @@ How to Use
 git clone https://github.com/mandoperivolaki/Apple-Financials.git
 cd Apple-Financials
 
-2. Install dependencies (Python 3 required):
+2. Install dependencies:
 
 pip install pandas matplotlib
 
