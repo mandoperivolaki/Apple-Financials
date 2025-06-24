@@ -4,7 +4,7 @@ import os
 import json
 
 # Paths
-CSV_PATH = 'C:\\Users\\Me\\Documents\\APPLE INC (01-06-2020 _ 05-05-2025).csv'
+CSV_PATH = 'APPLE INC (01-06-2020 _ 05-05-2025).csv'
 JSON_PATH = 'AAPL (1).json'
 TEMPLATE_PATH = 'index_template.html'
 OUTPUT_DIR = 'output'
